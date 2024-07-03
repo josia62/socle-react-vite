@@ -2,9 +2,11 @@ import Protected from './protectedRoute';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ExampleScreen from '../screens/protected/ExampleScreen';
+import { useAuth } from '@/services/redux/ducks/auth';
 
 const Navigation = (): any => {
-  const { accessToken, user } = useSelector(({ auth }) => auth);
+  const { accessToken, credentials } = useSelector(({ auth }) => auth)
+  const {updateAccessToken} = useAuth();
   return (
     <>
       <BrowserRouter>

@@ -7,6 +7,7 @@ export type AuthState = {
 
 export const enum AuthActionType {
   updateCredentials = '[Auth] Update credentials',
+  updateAccessToken = '[Auth] Update accessToken',
 }
 
 export const initialAuthState: AuthState = {
@@ -23,6 +24,11 @@ export const authReducer = (state = initialAuthState, action: any) => {
         ...state,
         credentials: payload,
       };
+    case AuthActionType.updateAccessToken:
+      return {
+        ...state,
+        accessToken: payload,
+      };
     default:
       return state;
   }
@@ -32,5 +38,6 @@ export const useAuth = () => {
   const dispatch = useDispatch();
   return {
     updateCredentials: (payload: any) => dispatch({ payload, type: AuthActionType.updateCredentials }),
+    updateAccessToken: (payload: any) => dispatch({ payload, type: AuthActionType.updateAccessToken }),
   };
 };
