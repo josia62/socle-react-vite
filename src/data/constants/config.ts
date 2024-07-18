@@ -4,8 +4,8 @@ interface Config {
 }
 
 const config: Config = {
-  baseUrl: process.env.EXPO_PUBLIC_URL_BACK ?? '',
-  hashkey: process.env.EXPO_PUBLIC_HASH_KEY ?? '',
+  baseUrl: import.meta.env.EXPO_PUBLIC_URL_BACK ?? '',
+  hashkey: import.meta.env.EXPO_PUBLIC_HASH_KEY ?? '',
 };
 
 export default config;
