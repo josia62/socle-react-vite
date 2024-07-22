@@ -1,7 +1,9 @@
 import config from './config'
- 
+
+const BASE_URL = `${config.baseUrl}/api`
+
 const Urls = {
-  USERS: `${config.baseUrl}/users`,
+  USERS: `${BASE_URL}/user`,
 };
 
 export default Urls;
