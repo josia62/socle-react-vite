@@ -7,11 +7,13 @@ export type ExampleRequestDTO = {
 export const defaultExampleRequest  = {
   username: "",
   email: "",
+  sex: 'male'
 }
 
 export const EXAMPLE_FIELD  = {
   USER_NAME: 'username',
   EMAIL: 'email',
+  SEX: 'sex',
 }
 
 

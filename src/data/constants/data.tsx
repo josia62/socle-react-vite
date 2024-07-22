@@ -5,3 +5,5 @@ export const packages = [
     amount: 5000,
   },
 ];
+
+export const sexDatas = [ 'male', 'female']
