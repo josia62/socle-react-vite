@@ -1,57 +1,24 @@
-import { useSelector } from 'react-redux';
-import { Input } from '@/presentation/components/ui/input';
 import {
   Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/presentation/components/ui/form";
 import { Button } from '@/presentation/components/ui/button';
 import { styles } from './style';
 import { useFormulaire } from '@/hooks/Example/useFormulaire';
-import { userActions } from '@/services/zustand/actions/user';
-import { userStates } from '@/services/zustand/states/user';
+import { InputField } from '@/presentation/components/Inputs/InputField';
+import { EXAMPLE_FIELD } from "@/data/dto/example/example-request.dto";
+import { BUTTON_TITLE } from "@/data/constants/strings";
 
 const ExampleScreen = () => {
-  const { credentials } = useSelector(({ auth }: any) => auth);
-  const { age } = userStates();
-  const { incrementAge, handleUpdateAge } = userActions();
   const { form, onSubmit } = useFormulaire();
   return (
     <div style={styles.form}>
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="example@domain.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <InputField title={EXAMPLE_FIELD.USER_NAME} form={form} />
+          <InputField title={EXAMPLE_FIELD.EMAIL} form={form} />
+          <Button type="submit">{BUTTON_TITLE.SUBMIT}</Button>
+        </form>
+      </Form>
     </div>
   );
 };
