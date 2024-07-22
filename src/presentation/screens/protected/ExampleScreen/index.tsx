@@ -10,6 +10,7 @@ import { BUTTON_TITLE } from "@/data/constants/strings";
 import { INPUT_TYPE } from "@/data/constants/types";
 import { InputSelect } from "@/presentation/components/Inputs/InputSelect";
 import { sexDatas } from "@/data/constants/data";
+import { InputDatePicker } from "@/presentation/components/Inputs/InputDatePicker";
 
 const ExampleScreen = () => {
   const { form, onSubmit } = useFormulaire();
@@ -20,6 +21,7 @@ const ExampleScreen = () => {
           <InputField title={EXAMPLE_FIELD.USER_NAME} form={form} type={INPUT_TYPE.SIMPLE} />
           <InputField title={EXAMPLE_FIELD.EMAIL} form={form} type={INPUT_TYPE.TEXT_AREA} />
           <InputSelect title={EXAMPLE_FIELD.SEX} form={form} data={sexDatas} />
+          <InputDatePicker title={EXAMPLE_FIELD.DATE_OF_BIRTH} form={form} />
           <Button type="submit">{BUTTON_TITLE.SUBMIT}</Button>
         </form>
       </Form>

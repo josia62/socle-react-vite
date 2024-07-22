@@ -7,13 +7,15 @@ export type ExampleRequestDTO = {
 export const defaultExampleRequest  = {
   username: "",
   email: "",
-  sex: 'male'
+  sex: 'male',
+  dob: new Date()
 }
 
 export const EXAMPLE_FIELD  = {
   USER_NAME: 'username',
   EMAIL: 'email',
   SEX: 'sex',
+  DATE_OF_BIRTH: 'dob'
 }
 
 

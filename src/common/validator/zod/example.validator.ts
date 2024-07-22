@@ -10,5 +10,8 @@ export const formSchema = z.object({
   }),
   sex: z.string({
     required_error: INPUT_ERRORS.SELECT_ERROR,
-  })
+  }),
+  dob: z.date({
+    required_error: INPUT_ERRORS.DATE_PICK_ERROR,
+  }),
 });
